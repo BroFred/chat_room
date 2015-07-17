@@ -9,3 +9,12 @@ describe('test post',function(){
 		.expect('{"a":1}',done);
 	});
 });
+
+
+describe('test mongodb',function(){
+	it('test get',function(done){
+		request(app).
+		get('/user')
+		.expect(200,done);
+	})
+});
