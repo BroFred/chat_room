@@ -2,7 +2,7 @@ var express=require('express');
 var router=express.Router();
 var bodyParser=require('body-parser');
 router.get('/',function(req,res){
-	res.sendStatus(200);
+	res.render('welcome',{title:'welcome'});
 });
 router.post('/',bodyParser.json(),function(req,res){
 	var body=req.body;

@@ -1,10 +1,11 @@
 var express=require('express');
 var exp=express();
-var socket = require('socket.io')(app);
 var app=require('http').Server(exp);
-var router=require('./router.js'); 
+var io = require('socket.io')(app);
+var router=require('./router.js');
+exp.set('view engine', 'ejs'); 
 exp.use(express.static('../../public'));
 exp.use('/user',router);
+require('./socket.js').chat(io);
 exports.exp=exp;
-exports.socket=socket;
 exports.app=app;
