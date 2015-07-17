@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 var express=require('express');
 var app=require('../../app.js').app;
-var exp=require('../../app.js').exp;
-exp.use(express.static('../../public'));
 app.listen(3000,function(){
 	console.log('listen 3000');
 });
