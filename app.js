@@ -2,8 +2,6 @@ var express=require('express');
 var exp=express();
 var app=require('http').Server(exp);
 var io = require('socket.io')(app);
-var mongo=require('mongoose');
-mongo.connect('mongodb://localhost/test');
 var router=require('./router.js');
 exp.set('view engine', 'ejs'); 
 exp.use(express.static('../../public'));

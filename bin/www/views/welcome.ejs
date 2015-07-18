@@ -1,1 +1,29 @@
 <h2><%= title %></h2>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script>
+  var socket = io();
+  var loc=[0,0];
+  window.addEventListener('keydown', function(event) {
+  switch (event.keyCode) {
+    case 37: // Left
+    	loc[0]--;
+     socket.emit('location',loc) 
+    break;
+
+    case 38: // Up
+    	loc[1]++;
+      socket.emit('location',loc)
+    break;
+
+    case 39: // Right
+    	loc[0]++;
+      socket.emit('location',loc)
+    break;
+
+    case 40: // Down
+    	loc[1]--;
+      socket.emit('location',loc)
+    break;
+  }
+}, false);
+</script>
